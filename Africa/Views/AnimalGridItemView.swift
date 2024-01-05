@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct AnimalGridItemView: View {
+    
+    let animal: AnimalModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(animal.image)
+            .resizable()
+            .scaledToFit()
+            .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
 
-#Preview {
-    AnimalGridItemView()
-}
+//#Preview {
+//    AnimalGridItemView()
+//}

@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct ExternalWebLinkView: View {
+    
+    let animal: AnimalModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GroupBox {
+            HStack {
+                Image(systemName: "globe")
+                Text("Wikipedia")
+                Spacer()
+                
+                Group {
+                    Image(systemName: "arrow.up.right.square")
+                    
+                    Link(animal.name, destination: (URL(string: animal.link) ?? URL(string: "https://wikipedia.org"))!)
+                }
+                .foregroundStyle(.accent)
+            }
+        }
     }
 }
 
-#Preview {
-    ExternalWebLinkView()
-}
+//#Preview {
+//    ExternalWebLinkView()
+//}

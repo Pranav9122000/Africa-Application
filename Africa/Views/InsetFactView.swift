@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct InsetFactView: View {
+    
+    let animal: AnimalModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GroupBox {
+            TabView {
+                ForEach(animal.fact, id: \.self) { item in
+                    Text(item)
+                }
+            }
+            .tabViewStyle(PageTabViewStyle())
+            .frame(minHeight: 150, idealHeight: 170, maxHeight: 180)
+        }
     }
 }
 
-#Preview {
-    InsetFactView()
-}
+//#Preview {
+//    InsetFactView()
+//}

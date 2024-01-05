@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct InsetGalleryView: View {
+    
+    let animal: AnimalModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(alignment: .center, spacing: 15) {
+                ForEach(animal.gallery, id: \.self) { image in
+                    Image(image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 400, height: 300)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                }
+            }
+        }
     }
 }
 
-#Preview {
-    InsetGalleryView()
-}
+//#Preview {
+//    InsetGalleryView()
+//}
